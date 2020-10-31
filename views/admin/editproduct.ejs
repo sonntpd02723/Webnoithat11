@@ -1,0 +1,72 @@
+
+
+
+
+<%- include("../layout/head") %>
+
+
+  <%- include("../layout/nav") %>
+  
+
+  <!-- Use any element to open the sidenav -->
+  <div id="insert">
+  <div id="main">
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+  
+  
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <div class="Home">
+      <form class="form-signin" action="/editproduct" method="POST" enctype="multipart/form-data">
+        <h2>Cập nhật sản phẩm</h2>
+        <div class="form-group">   
+          <input type="hidden" value="<%- danhsach._id %>" name="id" class="form-control" placeholder="id" required>     
+      </div> 
+        <div class="form-group">
+          <img src="/upload/<%- danhsach.image %>" style="width: 90%;height: 130%; margin-left: 10%;margin-top: 2%;">
+            <input type="file" name="image" >      
+     </div>
+        
+          <div class="form-group">       
+              <input type="text" value="<%- danhsach.name %>" name="name" class="form-control" placeholder="Tên sản phẩm" >    
+       </div>
+          <div class="form-group"> 
+            <input type="number" value="<%- danhsach.soluong %>"  name="soluong" class="form-control" placeholder="Số lượng" >
+          </div>
+          <div class="form-group"> 
+              <input type="number" value="<%- danhsach.gianhap %>" name="gianhap" class="form-control" placeholder="Giá nhập" >
+
+            </div>
+            <div class="form-group"> 
+              <input type="number" name="giaban"  value="<%- danhsach.giaban %>"class="form-control" placeholder="Giá bán" >
+            
+            </div>
+          
+          
+          <button class="btn btn-lg btn-warning btn-block text-uppercase" type="submit" style="width:20%;margin:auto;margin-top: 8cm;">Cập nhật</button>
+          </form>
+       
+  </div>
+</div>
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+</script>   
+
+ 
+
+
+
+
+
+
+

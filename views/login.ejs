@@ -1,0 +1,142 @@
+    
+<!-- <link rel="stylesheet" href="/css/login.css">  -->
+<%- include("./layout/head") %>
+
+  <%- include("./layout/nav") %>
+  
+  
+  <!-- Use any element to open the sidenav -->
+  
+  
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+  <div id="main">
+   
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+  </br>
+  <div class="tab">
+    <button class="tablink" onclick="openPage('login', this, 'red')" id="defaultOpen">Đăng nhập</button>
+   
+    <button  class="tablink" onclick="openPage('register', this, 'blue')">Đăng ký</button>
+    
+    
+    <div id="login" class="tabcontent">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <img class="icon" src="/icon/facebook.png"> 
+                <img class="icon" src="/icon/google.png"> 
+                <h5 class="card-title text-center">Đăng nhập</h5>
+             
+                
+    <% if (message.length > 0) { %>
+      <div class="alert alert-danger"><%= message %></div>
+  <% } %>
+    
+          
+                <form class="form-signin" action="/signin" method="POST">
+                  
+                  <div class="form-group">
+                    <img class="icon1" src="/icon/email.jpg"> 
+                         <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    
+                  </div>
+                  <br>
+                  <div class="form-group">
+                    <img class="icon1" src="/icon/password.jpg"> 
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                   <br>
+                   <br>
+                
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" style="width:30%;margin:auto;" type="submit">Đăng Nhập</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="register" class="tabcontent">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Đăng ký</h5>
+                <% if (hasErrors) { %>
+                  <div class="alert alert-danger"><%= message %></div>
+              <% } %>
+                <form class="form-signin" action="/signup" method="POST">
+                  <div class="form-group">
+                    <img class="icon1" src="/icon/email.jpg">
+                    <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    
+                  </div>
+                 
+                  <div class="form-group">
+                    <img class="icon1" src="/icon/password.jpg"> 
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                   
+                  </div>
+                 
+                  <div class="form-group"> <img class="icon1" src="/icon/username.png">
+
+                    <input type="text" name="name" class="form-control" placeholder="Name" >
+                   
+                  </div>
+    
+                 
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" style="width:30%;margin:auto;">Đăng ký</button>
+                  <hr class="my-4">
+                  <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Đăng nhập với Google</button>
+                  <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Đăng nhập với Facebook</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+   
+  </div>
+
+  </div>
+
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+</script>   
+
+
+<script>
+    function openPage(pageName,elmnt,color) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablink");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+      }
+      document.getElementById(pageName).style.display = "block";
+      elmnt.style.backgroundColor = color;
+    }
+    
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
