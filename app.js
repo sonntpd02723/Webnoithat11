@@ -45,7 +45,5 @@ app.use('/', indexRouter);
 
 // error handler
 
-app.listen(3000,(req,res)=>{
-  console.log("localhost:3000")
-})
+app.listen(process.env.PORT || 3000)
 
