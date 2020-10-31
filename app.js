@@ -45,7 +45,5 @@ app.use('/', indexRouter);
 
 // error handler
 
-app.listen(3000,(req,res)=>{
-console.log("server đã khởi động")
-})
+app.listen(process.env.PORT || 3000)
 
