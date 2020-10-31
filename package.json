@@ -1,10 +1,10 @@
 {
-  "name": "lllllllllllllllllllllooooooooooooo",
+  "name": "BanHangNoiThat_SonNT",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
