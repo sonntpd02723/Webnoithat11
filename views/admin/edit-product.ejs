@@ -5,7 +5,7 @@
 <%- include("../layout/head") %>
 
 
-  <%- include("../layout/nav") %>
+  <%- include("../layout/nav-admin") %>
   
 
   <!-- Use any element to open the sidenav -->
@@ -16,8 +16,13 @@
   
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
     <div class="Home">
-      <form class="form-signin" action="/editproduct" method="POST" enctype="multipart/form-data">
+      <form class="form-signin" action="/edit-product" method="POST" enctype="multipart/form-data">
         <h2>Cập nhật sản phẩm</h2>
+        <br>
+        <% if (message.length > 0) { %>
+          <div class="form-control"><%= message %></div>
+      <% } %>
+      <br>
         <div class="form-group">   
           <input type="hidden" value="<%- danhsach._id %>" name="id" class="form-control" placeholder="id" required>     
       </div> 

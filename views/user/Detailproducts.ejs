@@ -1,0 +1,84 @@
+<%- include("../layout/head") %>
+
+<body>
+
+  <%- include("../layout/nav") %>
+  
+
+  <!-- Use any element to open the sidenav -->
+  
+  
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+  <div id="main">
+  
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <div class="container"> 
+        <div class="card"> 
+         <div class="container-fliud"> 
+          <div class="wrapper row"> 
+           <div class="preview col-md-6"> 
+            <div class="preview-pic tab-content"> 
+             <div class="tab-pane active" id="pic-1"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_1.jpg" alt="">
+             </div> 
+             <div class="tab-pane" id="pic-2"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_4.jpg" alt="Học thiết kế web bán hàng Online">
+             </div> 
+             <div class="tab-pane" id="pic-3"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_5.jpg" alt="Học thiết kế web bán hàng Online">
+             </div> 
+             <div class="tab-pane" id="pic-4"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_6.jpg" alt="Học thiết kế web bán hàng Online">
+             </div> 
+             <div class="tab-pane" id="pic-5"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_7.jpg" alt="Học thiết kế web bán hàng Online">
+             </div> 
+            </div> 
+            <!-- <ul class="preview-thumbnail nav nav-tabs"><div class="menu-icon"><span>Hình ảnh khác</span></div> 
+                <br>
+             <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_1.jpg" alt="Học thiết kế web bán hàng Online"></a>
+             </li> 
+             <li><a data-target="#pic-2" data-toggle="tab"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_4.jpg" alt="Học thiết kế web bán hàng Online"></a>
+             </li> 
+             <li><a data-target="#pic-3" data-toggle="tab"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_5.jpg" alt="Học thiết kế web bán hàng Online"></a>
+             </li> 
+             <li><a data-target="#pic-4" data-toggle="tab"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_6.jpg" alt="Học thiết kế web bán hàng Online"></a>
+             </li> 
+             <li><a data-target="#pic-5" data-toggle="tab"><img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/bootstrap_productdetail/images/doboafnuoicon_7.jpg" alt="Học thiết kế web bán hàng Online"></a>
+             </li> 
+            </ul>  -->
+           </div> 
+           <div class="details col-md-6"> 
+            <h3 class="product-title">Thời trang cho bé trai nhiều màu sắc ngộ nghĩnh</h3> 
+            <div class="rating"> 
+             <div class="stars"> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star checked"></span> <span class="fa fa-star"></span> <span class="fa fa-star"></span> 
+             </div> <span class="review-no">123 đánh giá</span> 
+            </div> 
+            <p class="product-description">Với trang phục này mẹ có thể cùng bé diện đi chơi, đi học đều rất phù hợp. Khi bé mặc vào, chắc chắn mẹ sẽ có cảm nhận hoàn toàn khác biệt vì màu sắc phong phú không chỉ khiến bộ trang phục trở nên bắt mắt mà còn tôn thêm vẻ nhí nhảnh, nghịch ngợm và năng động của các bé trai.            Khi diện những bộ thời trang cho bé trai ngộ nghĩnh này, mẹ đừng quên kèm theo cho bé một số phụ kiện phù hợp như mũ lưỡi trai cá tính, nón kết sành điệu, kính mát “cực ngầu” hay giày bata năng động nhé!            Chúc con yêu của bạn có thêm những bộ đồ thời trang cho bé trai theo phong cách đa màu sắc cực xinh xắn và đáng yêu!</p> 
+            <h4 class="price">Giá bán: 200.000 đ</h4> 
+            <p class="vote"><strong>91%</strong> of người mua hài lòng với sản phẩm này <strong>(87 bình chọn)</strong>
+            </p> 
+            <h5 class="sizes">Kích cỡ: <span class="size" data-toggle="tooltip" title="small">s</span> <span class="size" data-toggle="tooltip" title="medium">m</span> <span class="size" data-toggle="tooltip" title="large">l</span> <span class="size" data-toggle="tooltip" title="xtra large">xl</span> 
+            </h5> 
+            <h5 class="colors">Màu: <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span> <span class="color green"></span> <span class="color blue"></span> 
+            </h5> 
+            <div class="action"> <a href="http://hocwebgiare.com/" target="_blank">            <button class="add-to-cart btn btn-default" type="button">MUA NGAY</button>            </a> <a href="http://hocwebgiare.com/" target="_blank">            <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>            </a> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+        </div>
+       </div> 
+  </div>
+ 
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+</script>   
+</body>
+ 

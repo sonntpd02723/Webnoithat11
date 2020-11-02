@@ -1,7 +1,7 @@
 <%- include("../layout/head") %>
 
 
-  <%- include("../layout/nav") %>
+  <%- include("../layout/nav-admin") %>
   
 
   <!-- Use any element to open the sidenav -->
@@ -14,7 +14,12 @@
     <div class="Home">
       <form class="form-signin" action="/insert" method="POST" enctype="multipart/form-data">
         <h2>Thêm Sản Phẩm</h2>
+
         <br>
+        <% if (message.length > 0) { %>
+          <div class="form-control"><%= message %></div>
+      <% } %>
+      <br>
         <div class="form-group">
           <input type="text" name="name" class="form-control" placeholder="Tên sản phẩm" required>
         </div>

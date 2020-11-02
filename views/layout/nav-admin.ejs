@@ -1,0 +1,32 @@
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >&times;</a>
+    <a href="/home"><i class="fa fa-fw fa-home"></i> Trang chủ</a>
+    
+    <a class="dropdown-btn"> <i class="material-icons" style="font-size:30px; float: left;">star</i>   Sản phẩm
+          <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-container">
+          <a href="/admin/list-product">Danh sách</a>
+          <a href="/admin/insert-product">Thêm mới </a>
+          
+        </div>
+        <a href="/home" ><i class="fa fa-fw fa-user"></i> QL Khách hàng</a>
+        <a href="/cart"><i class="material-icons" style="font-size:30px;float: left;">shopping_cart</i> Đơn hàng</a>
+      </div>
+      <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        
+        for (i = 0; i < dropdown.length; i++) {
+          dropdown[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var dropdownContent = this.nextElementSibling;
+          if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+          } else {
+          dropdownContent.style.display = "block";
+          }
+          });
+        }
+        </script>

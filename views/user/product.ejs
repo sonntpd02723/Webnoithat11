@@ -1,0 +1,139 @@
+<%- include("../layout/head") %>
+<style>
+  .thumbnail>img {
+    display: block;
+    height: 165px;
+    max-width: 100%;
+}
+</style>
+
+  <%- include("../layout/nav") %>
+  
+
+  <!-- Use any element to open the sidenav -->
+  
+  
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+  <div id="main">
+   
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    
+    <div class="container"> 
+    
+     
+        
+      <div class="well well-sm text-right">  
+      <input type="search" placeholder="Tìm kiếm" style="border-radius: 15px;padding: 10px; width: 20%;">    
+      </div> 
+      <!-- <div id="content">
+      </div> -->
+      <div id="products" class="row list-group">
+        <% danhsach.forEach(function(product){ %>
+<div class="item  col-xs-3 col-lg-3"> 
+  <div class="thumbnail"> 
+    <img class="group list-group-image" src="/upload/<%- product.image %>" alt="Sản phẩm 8" width="300px"> 
+   <div class="caption"> 
+    <h4 class="group inner list-group-item-heading"><%- product.name %></h4> 
+    <p class="group inner list-group-item-text" style="white-space: nowrap;
+    overflow: hidden; text-overflow: ellipsis; "> Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p> 
+    <div class="row"> 
+     <div class="col-xs-12 col-md-6"> 
+      <p class="lead"><%- product.giaban %></p> 
+     </div> 
+     <div class="col-xs-12 col-md-6"> <a class="btn btn-success" href="/Detailproducts">Chi tiết</a> 
+     </div> 
+    </div> 
+   </div> 
+  </div>
+ 
+  <!-- <div class="button">
+    <a href="./edit/<%- product._id %>">Edit</a>
+    <br>
+    <a href="./delete/<%- product._id %>">Delete</a>
+  </div>  -->
+ </div> 
+ <% }); %>
+    </div>
+ <!-- pagination -->
+  <div class="row" style="margin-left: 40%">
+    <!-- hiển thị phân trang nếu có trang -->
+    <% if(pages > 0) { %>
+    <nav class="mx-auto">
+      <ul class="pagination" style="margin-top: 2rem;">
+      
+        <!-- FIRST ITEM -->  
+        <% if(current == 1) { %> 
+     
+            <li class="page-item disabled">
+              <a class="page-link">First</a>
+            </li>
+        <% } else { %>
+       
+            <li class="page-item">
+              <a class="page-link" href="/product">First</a>
+            </li>
+        <% } %>
+      
+        <!-- ITEMS  -->
+        <% var i = (Number(current) > 3 ? Number(current) - 2 : 1) %> 
+       <% if(i !== 1) { %>
+            <li class="page-item disabled">
+              <a class="page-link" href="#">...</a>
+            </li>
+        <% } %>
+        <% for(; i <= (Number(current) + 2) && i <= pages; i++) { %>
+           <% if(i == current) { %>
+            <li class="page-item active">
+              <a class="page-link" href="/product/<%= i %>/">
+                <%= i %>
+              </a>
+            </li>
+        <% } else { %>
+            <li class="page-item">
+              <a class="page-link" href="/product/<%= i %>/">
+                <%= i %>
+              </a>
+            </li>
+        <% } %>
+        <% if (i == Number(current) + 2 && i < pages) { %>
+            <li class="page-item disabled">
+              <a class="page-link" href="#">...</a>
+            </li>
+        <% } %>
+        <% } %>
+        
+        <!-- LAST ITEM -->
+        <% if(current == pages) { %> 
+           <li class="page-item disabled">
+            <a class="page-link" >
+                Last
+            </a>
+            </li>
+        <% } else { %>
+        
+            <li class="page-item">
+              <a class="page-link" href="/product/<%= pages %>/">
+                Last
+              </a>
+            </li>
+        <% } %>
+      </ul>
+    </nav>
+    <% } %>
+  </div>
+</div>
+</div>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+</script>   
+
+ 
